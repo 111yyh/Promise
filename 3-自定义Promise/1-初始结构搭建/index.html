@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+        // let p = new Promise((resolve,reject) => {
+        //     // resolve('OK')
+        //     // reject('error')
+        //     //抛出异常
+        //     // throw 'error';
+        //     setTimeout(() => {
+        //         resolve('OK')
+        //         // reject('Error')
+        //     },1000)
+        // })
+
+        // const res = p.then(value => {
+        //     console.log(value);
+        //     // return 'hello';
+        //     // return new Promise((resolve,reject) => {
+        //     //     // resolve('success');
+        //     //     reject('OH no')
+        //     // })
+
+        //     //抛出错误
+        //     // throw 'fail';
+        // },reason => {
+        //     console.warn(reason);
+        //     // return 'hello'
+
+        //     // return new Promise((resolve,reject) => {
+        //     //     // resolve('success');
+        //     //     reject('OH no')
+        //     // })
+
+        //     // throw 'fail';
+        // })
+
+        // console.log(res);
+    
+        /*catch方法*/
+        // let p = new Promise((resolve,reject) => {
+        //     // resolve('OK');
+        //     setTimeout(() => {
+        //         // reject('error');
+        //         resolve('OK')
+        //     },1000)
+        // })
+
+        // //值传递
+        // p.then()
+        // .then(value => {
+        //     console.log(111);
+        // }).then(value => {
+        //     console.log(222);
+        //     // throw 'ERROR'
+        // }).then(value => {
+        //     console.log(333);
+        // }).catch(reason => {
+        //     console.warn(reason);
+        // })
+    
+        /*resolve方法*/
+        // const p = Promise.resolve('OK');
+        // const p2 = Promise.resolve(Promise.resolve('YES'))
+
+        // console.log(p2);
+
+        /*reject方法*/
+        // const p = Promise.reject('ERROR');
+        // const p2 = Promise.reject(new Promise((resolve,reject) => {
+        //     resolve('OK')
+        // }))
+
+        // console.log(p2);
+    
+        /*all方法*/
+        // let p1 = new Promise((resolve,reject) => {
+        //     resolve('OK')
+        // })
+        // let p2 = Promise.resolve('Success')
+        // let p3 = Promise.resolve('YES')
+
+        // //调用all方法
+        // let result = Promise.all([p1,p2,p3])
+
+        // console.log(result);
+    
+        /*race方法*/
+        // let p1 = new Promise((resolve,reject) => {
+        //     resolve('OK')
+        // })
+        // let p2 = Promise.resolve('Success')
+        // let p3 = Promise.resolve('YES')
+
+        // //调用race方法
+        // let result = Promise.race([p1,p2,p3])
+
+        // console.log(result);
+    
+        /*回调函数 异步执行*/
+        let p1 = new Promise((resolve,reject) => {
+            resolve('OK');
+            console.log(111);
+        })
+
+        p1.then(value => {
+            console.log(222);
+        })
+
+        console.log(333);
+    </script>
+</body>
+</html>
